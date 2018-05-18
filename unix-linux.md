@@ -144,6 +144,16 @@ for filename in $(ls file*.csv); do sed 1d $filename >> final.csv; done
 - screen manager with VT100/ANSI terminal emulation
     - `screen -r` to reattach
 
+`sar`
+- The system activity data collector, sadc, collects and stores performance information over time.
+- The data collection may not be enabled by default. Creating a file /etc/cron.d/sysstat allows crontab to manage the collection of this data.
+```
+# Run system activity accounting tool every 10 minutes 
+*/10 * * * * root /usr/lib64/sa/sa1 -S DISK 1 1 
+# 0 * * * * root /usr/lib64/sa/sa1 -S DISK 600 6 & 
+# Generate a daily summary of process accounting at 23:53 
+53 23 * * * root /usr/lib64/sa/sa2 -A 
+```
 
 `systemctl`
  - `systemctl list-unit-files`
