@@ -261,6 +261,26 @@ for filename in $(ls file*.csv); do sed 1d $filename >> final.csv; done
 - `who is <ip address>`
     - get hostname/domain
 
+`xbindkeys`
+- grab keys and mouse button events in X and starts associated shell command.
+
+- `xbindkeys -f ~/.xbindkeysrc`
+    - start xbindkeys daemon
+
+    ```
+    killall -s1 xbindkeys
+    killall xbindkeys; xbindkeys
+    killall -HUP xbindkeys
+    ```
+
+- restart xbindkeys
+- references
+    - https://www.linux.com/news/start-programs-pro-xbindkeys
+    - http://butlerpc.net/blog/2011/01/using-xbindkeys-on-ubuntu-linux-to-remap-key-commands/
+    - http://xahlee.info/linux/linux_xbindkeys_tutorial.html
+    - http://dev-random.net/make-your-own-keybindings-in-linux-using-xbindkeys/
+
+
 `yum`
 - an interactive, rpm based, package manager
     - `yum history | yum history undo {#}`

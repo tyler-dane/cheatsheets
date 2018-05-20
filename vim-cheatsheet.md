@@ -61,8 +61,8 @@ v {motion} :w FILENAME      #Saves part of the file that you highlighted to curr
 ```
 ### Substitution
 ```bash
-:s/old/new/g        #Substitutes 'old' for 'new' in current line only
-:s/old/new/gc       #Globally substitutes 'old' for 'new', prompting for confirmation for each substitution
+:%s/old/new/g        #Substitutes 'old' for 'new' in current line only
+:%s/old/new/gc       #Globally substitutes 'old' for 'new', prompting for confirmation for each substitution
 :%s/old/new/g       #Globally substitutes 'old' for 'new' without prompting for confirmation
 :#,#s/old/new/g     #Substitutes 'old' for 'new', where #,# are the line numbers of the range of lines to substitute  
 ```
