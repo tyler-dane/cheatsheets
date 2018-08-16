@@ -34,7 +34,8 @@ G       #Moves cursor to bottom of file
 gg      #Moves cursor to top of file
 {#}G    #Moves cursor to the given line number
 :{#}    #Moves cursor to the given line number
-y       #Yanks (pastes) text
+Y       #Copies entire line (use *P* or *p* to then paste before/after current line)
+y       #Yanks (copies) text
             EXAMPLE 1:
                 yw  #Yanks word
             EXAMPLE 2:
