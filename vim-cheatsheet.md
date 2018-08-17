@@ -56,6 +56,8 @@ y       # Yanks (copies) text
                 j$      #Moves cursor to end of line (highlighting)
                 p       #Puts (pastes) the text
                 ESC     #Exits visual mode
+
+:2,5y  # Yanks everything from lines 2-5
 ```
 
 #### Deleting
