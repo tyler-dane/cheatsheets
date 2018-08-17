@@ -3,7 +3,7 @@ Use these commands from inside a `vim` session.
 To open a test vim session, run this from the command-line: `vim ~/test-vim.sh`
 
 
-#### Getting Help
+### Getting Help
 ```bash    
 :help           #Opens VIM help window in terminal
 CTRL-W CTRL-W   #Jump from help window
@@ -12,7 +12,7 @@ CTRL-T CTRL-O   #Return to previous location
 F1              #Opens OS help window
 ```
 
-#### Navigation 
+### Navigation 
 ```
 2w      #Moves cursor 2 words forward
 3e      #Moves cursor to end of third word forward
@@ -60,7 +60,15 @@ y       # Yanks (copies) text
 :2,5y  # Yanks everything from lines 2-5
 ```
 
-#### Deleting
+#### Selecting and manipulating
+```
+%vi{(["'}   # Selects everything between ()s or []s or ""s or ''s on current line
+%ci{(["'}   # Changes everything between ()s or []s or ""s or ''s on current line
+%di{(["'}   # Deletes everything between ()s or []s or ""s or ''s on current line
+
+```
+
+### Deleting
 ```
 dw      #Deletes word
 d$      #Deletes to end of line
@@ -70,7 +78,7 @@ dd      #Deletes entire line
 :,bd    #Deletes from current location to b
 ```
 
-#### Execute Commands
+### Execute Commands
 ```bash
 :!                          #Executes external shell command
 v {motion} :w FILENAME      #Saves part of the file that you highlighted to current directory
