@@ -32,18 +32,21 @@ gg      #Moves cursor to top of file
 
 ### Text Manipulation
 ```
-p       #Puts previously deleted text below the cursor
-r{x}    #Replaces text with the letter after r
-R       #Replaces more than one character, entering you into Insert Mode
-ce      #Changes until end of a word and enter Insert Mode. This is a better option than d[motion] when you want to insert text
-c$      #Changes until end of line
-o ; O   #Opens below, above -- enters you into Insert Mode
-a       #Insert text AFTER the cursor
+>       # Indents highlighted text
+{#}>    # Indents highlighted text for specified times
+p       # Puts previously deleted text below the cursor
+]p      # Same as above, but aligns block with surrounding text
+r{x}    # Replaces text with the letter after r
+R       # Replaces more than one character, entering you into Insert Mode
+ce      # Changes until end of a word and enter Insert Mode. This is a better option than d[motion] when you want to insert text
+c$      # Changes until end of line
+o ; O   # Opens below, above -- enters you into Insert Mode
+a       # Insert text AFTER the cursor
 
-u       #Undo previous command
-CTL-r   #Re-do prevoius command
-Y       #Copies entire line (use *P* or *p* to then paste before/after current line)
-y       #Yanks (copies) text
+u       # Undo previous command
+CTL-r   # Re-do prevoius command
+Y       # Copies entire line (use *P* or *p* to then paste before/after current line)
+y       # Yanks (copies) text
             EXAMPLE 1:
                 yw  #Yanks word
             EXAMPLE 2:
