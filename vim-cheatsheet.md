@@ -1,6 +1,6 @@
 # VIM CHEATSHEET
 
-## Getting Help
+#### Getting Help
 ```bash    
 :help           #Opens VIM help window in terminal
 CTRL-W CTRL-W   #Jump from help window
@@ -9,25 +9,12 @@ CTRL-T CTRL-O   #Return to previous location
 F1              #Opens OS help window
 ```
 
-## Common Tasks
-```bash
-A       #Appends cursor to end of line and enters insert mode
-```
-#### Deleting
-```
-dw      #Deletes word
-d$      #Deletes to end of line
-de      #Deletes to end of current word 
-dd      #Deletes entire line
-:a,bd   #Deletes from a to b
-:,bd    #Deletes from current location to b
-```
-
 #### Navigation 
 ```
 2w      #Moves cursor 2 words forward
 3e      #Moves cursor to end of third word forward
 0       #Moves cursor to start of line
+A       #Appends cursor to end of line and enters insert mode
 CTL-G   #Shows location in the file and file status
 G       #Moves cursor to bottom of file
 gg      #Moves cursor to top of file
@@ -38,6 +25,8 @@ gg      #Moves cursor to top of file
     N                  #Cycles backwards through results
 %                  #When cursor is over a (, [, or {, this finds the matching closing symbol.
 ```
+
+
 ### Text Manipulation
 ```
 p       #Puts previously deleted text below the cursor
@@ -61,6 +50,16 @@ y       #Yanks (copies) text
                 j$      #Moves cursor to end of line (highlighting)
                 p       #Puts (pastes) the text
                 ESC     #Exits visual mode
+```
+
+#### Deleting
+```
+dw      #Deletes word
+d$      #Deletes to end of line
+de      #Deletes to end of current word 
+dd      #Deletes entire line
+:a,bd   #Deletes from a to b
+:,bd    #Deletes from current location to b
 ```
 
 #### Execute Commands
