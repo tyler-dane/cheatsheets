@@ -1,4 +1,7 @@
 # VIM CHEATSHEET
+Use these commands from inside a `vim` session.
+To open a test vim session, run this from the command-line: `vim ~/test-vim.sh`
+
 
 #### Getting Help
 ```bash    
