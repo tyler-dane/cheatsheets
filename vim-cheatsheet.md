@@ -8,16 +8,38 @@ CTRL-J          #Jump
 CTRL-T CTRL-O   #Return to previous location
 F1              #Opens OS help window
 ```
+
 ## Common Tasks
 ```bash
 A       #Appends cursor to end of line and enters insert mode
+```
+#### Deleting
+```
 dw      #Deletes word
 d$      #Deletes to end of line
 de      #Deletes to end of current word 
 dd      #Deletes entire line
+:a,bd   #Deletes from a to b
+:,bd    #Deletes from current location to b
+```
+
+#### Navigation 
+```
 2w      #Moves cursor 2 words forward
 3e      #Moves cursor to end of third word forward
 0       #Moves cursor to start of line
+CTL-G   #Shows location in the file and file status
+G       #Moves cursor to bottom of file
+gg      #Moves cursor to top of file
+{#}G    #Moves cursor to the given line number
+:{#}    #Moves cursor to the given line number
+/{search}          #Searches for results in file
+    n                  #Cycles forward through results
+    N                  #Cycles backwards through results
+%                  #When cursor is over a (, [, or {, this finds the matching closing symbol.
+```
+### Text Manipulation
+```
 p       #Puts previously deleted text below the cursor
 r{x}    #Replaces text with the letter after r
 R       #Replaces more than one character, entering you into Insert Mode
@@ -28,12 +50,6 @@ a       #Insert text AFTER the cursor
 
 u       #Undo previous command
 CTL-r   #Re-do prevoius command
-
-CTL-G   #Shows location in the file and file status
-G       #Moves cursor to bottom of file
-gg      #Moves cursor to top of file
-{#}G    #Moves cursor to the given line number
-:{#}    #Moves cursor to the given line number
 Y       #Copies entire line (use *P* or *p* to then paste before/after current line)
 y       #Yanks (copies) text
             EXAMPLE 1:
@@ -46,20 +62,15 @@ y       #Yanks (copies) text
                 p       #Puts (pastes) the text
                 ESC     #Exits visual mode
 ```
-### Advanced Tasks
+
+#### Execute Commands
 ```bash
 :!                          #Executes external shell command
 v {motion} :w FILENAME      #Saves part of the file that you highlighted to current directory
 :r FILENAME                 #Retrieves the highlighted text that you previously saved and enter it into current VIM session
 :r !COMMAND [e.g. `:r !ls]  #Reads the output of an external command in the VIM session. Useful for log review.
 ```
-### Searching
-```bash
-/{search}          #Searches for results in file
-    n                  #Cycles forward through results
-    N                  #Cycles backwards through results
-%                  #When cursor is over a (, [, or {, this finds the matching closing symbol.
-```
+
 ### Substitution
 ```bash
 :%s/old/new/g        #Substitutes 'old' for 'new' in current line only
