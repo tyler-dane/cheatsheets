@@ -62,9 +62,10 @@ y       # Yanks (copies) text
 
 #### Selecting and manipulating
 ```
-%vi{(["'}   # Selects everything between ()s or []s or ""s or ''s on current line
-%ci{(["'}   # Changes everything between ()s or []s or ""s or ''s on current line
-%di{(["'}   # Deletes everything between ()s or []s or ""s or ''s on current line
+%vi{(["'}                   # Selects everything between ()s or []s or ""s or ''s on current line
+%ci{(["'}                   # Changes everything between ()s or []s or ""s or ''s on current line
+%di{(["' or %di{symbol}     # Deletes everything between {}s ()s or []s or ""s or ''s on current line
+    %di(                    # Deletes everything inbetween ()s  
 
 ```
 
