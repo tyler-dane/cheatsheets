@@ -75,7 +75,9 @@ y       # Yanks (copies) text
 
 ### Deleting
 ```
-dw      #Deletes word
+dw      # Deletes from cursor to end of word
+daw     # "Delete a word" (deletes entire word under cursor)    
+caw     #  "Change a word" (deletes the word under the cursor and put you in insert mode)
 d$      #Deletes to end of line
 de      #Deletes to end of current word 
 dd      #Deletes entire line
