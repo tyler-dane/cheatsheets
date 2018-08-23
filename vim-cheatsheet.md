@@ -62,11 +62,12 @@ y       # Yanks (copies) text
 
 #### Selecting and manipulating
 ```
-%vi{(["'}                   # Selects everything between ()s or []s or ""s or ''s on current line
+%vi{(["'b}                  # Selects everything between `()`s or `[]`s or `""`s or `''`s or `<block>` on current line
 %ci{(["'}                   # Changes everything between ()s or []s or ""s or ''s on current line
 %di{(["' or %di{symbol}     # Deletes everything between {}s ()s or []s or ""s or ''s on current line
-    %di(                    # Deletes everything inbetween ()s  
-
+    %di(                    # Deletes everything inbetween ()s
+    
+~                           # Toggles capitalization of selected text (requires Twiddle case)
 ```
 
 ### Deleting
