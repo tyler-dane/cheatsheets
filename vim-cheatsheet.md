@@ -14,6 +14,10 @@ F1              #Opens OS help window
 
 ### Navigation 
 ```
+ _ (underscore)      # Jumps to the first non-whitespace character on the same line the cursor is on
+ {+-}               # Jumps to first non-whitespace character on next/revious line
+
++ and - jump to the first non-whitespace character on the next / previous line
 2w      #Moves cursor 2 words forward
 3e      #Moves cursor to end of third word forward
 0       #Moves cursor to start of line
