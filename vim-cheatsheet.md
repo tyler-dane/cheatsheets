@@ -60,7 +60,8 @@ y       # Yanks (copies) text
                 p       #Puts (pastes) the text
                 ESC     #Exits visual mode
 
-:2,5y  # Yanks everything from lines 2-5
+:2,5y       # Yanks everything from lines 2-5
+:m{#,0, $}    # Moves line to a line number or before first or after last line
 ```
 
 #### Selecting and manipulating
