@@ -21,6 +21,13 @@ F1              #Opens OS help window
 3e      # Moves cursor to end of third word forward
 0       # Moves cursor to start of line
 A       # Appends cursor to end of line and enters insert mode
+fX      to next 'X' after cursor, in the same line (X is any character)
+FX      to previous 'X' before cursor (f and F put the cursor on X)
+tX      til next 'X' (similar to above, but cursor is before X)
+TX      til previous 'X'
+;       repeat above, in same direction
+,       repeat above, in reverse direction
+
 CTL-G   # Shows location in the file and file status
 G       # Moves cursor to bottom of file
 gg      # Moves cursor to top of file
