@@ -76,6 +76,7 @@ y       # Yanks (copies) text
 ```
 V                           # Select entire line
 Vip or Vap                  # Select current paragraph
+    o                       # Toggle between beginning and end of selected paragraph
 
 
 %vi{(["'b}                  # Selects everything between `()`s or `[]`s or `""`s or `''`s or `<block>` on current line
