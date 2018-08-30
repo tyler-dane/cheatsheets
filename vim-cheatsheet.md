@@ -56,7 +56,6 @@ a       # Insert text AFTER the cursor
 u       # Undo previous command
 CTL-r   # Re-do prevoius command
 
-V       # Select entire line
 Y       # Copies entire line (use *P* or *p* to then paste before/after current line)
 y       # Yanks (copies) text
             EXAMPLE 1:
@@ -75,6 +74,10 @@ y       # Yanks (copies) text
 
 #### Selecting and manipulating
 ```
+V                           # Select entire line
+Vip or Vap                  # Select current paragraph
+
+
 %vi{(["'b}                  # Selects everything between `()`s or `[]`s or `""`s or `''`s or `<block>` on current line
 %ci{(["'}                   # Changes everything between ()s or []s or ""s or ''s on current line
 %di{(["' or %di{symbol}     # Deletes everything between {}s ()s or []s or ""s or ''s on current line
