@@ -55,6 +55,8 @@ a       # Insert text AFTER the cursor
 
 u       # Undo previous command
 CTL-r   # Re-do prevoius command
+
+V       # Select entire line
 Y       # Copies entire line (use *P* or *p* to then paste before/after current line)
 y       # Yanks (copies) text
             EXAMPLE 1:
