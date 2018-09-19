@@ -85,6 +85,8 @@ Vip or Vap                  # Select current paragraph
     %di(                    # Deletes everything inbetween ()s
     
 ~                           # Toggles capitalization of selected text (requires Twiddle case)
+
+CTRL-v                      # Vertical / column select
 ```
 
 ### Deleting
