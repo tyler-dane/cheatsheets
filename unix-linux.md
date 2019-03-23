@@ -24,6 +24,10 @@ A list of Unix/Linux commands that I find useful
 `curl ifconfig.me`
 - get public IP address
 
+`diff -r /dir/path/1 /dir/path/2`
+- compare directories
+- use `q` flag to only show summary of files changed
+
 `df -khTi`
 - shows block size, files system, human format, inode usage
 
