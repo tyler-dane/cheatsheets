@@ -64,7 +64,7 @@ y       # Yanks (copies) text
                 v       #Enters visual mode
                 ARROWS  #Highlights command
                 y       #Enters yank mode
-                j$      #Moves cursor to end of line (highlighting)
+                $      #Moves cursor to end of line (highlighting)
                 p       #Puts (pastes) the text
                 ESC     #Exits visual mode
 
@@ -91,14 +91,17 @@ CTRL-v                      # Vertical / column select
 
 ### Deleting
 ```
-dw      # Deletes from cursor to end of word
-daw     # "Delete a word" (deletes entire word under cursor)    
-caw     #  "Change a word" (deletes the word under the cursor and put you in insert mode)
-d$      #Deletes to end of line
-de      #Deletes to end of current word 
-dd      #Deletes entire line
-:a,bd   #Deletes from a to b
-:,bd    #Deletes from current location to b
+dw      		# Deletes from cursor to end of word
+daw     		# "Delete a word" (deletes entire word under cursor)    
+caw     		# "Change a word" (deletes the word under the cursor and put you in insert mode)
+d$      		# Deletes to end of line
+de      		# Deletes to end of current word 
+dd      		# Deletes entire line
+C			# Deletes to end of line and enters Insert mode. Pair with `_` for quickly replace lines
+:a,bd   		# Deletes from a to b
+:,bd    		# Deletes from current location to b
+:%s/phrase//gc		# Delete each 'phrase' in document, prompting for comfirmation
+
 ```
 
 ### Execute Commands
