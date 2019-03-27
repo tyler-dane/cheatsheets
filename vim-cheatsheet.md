@@ -21,6 +21,8 @@ F1              #Opens OS help window
 3e      # Moves cursor to end of third word forward
 0       # Moves cursor to start of line
 A       # Appends cursor to end of line and enters insert mode
+b	# jump to beginning of current word
+e	# jump to end of current word
 fX      to next 'X' after cursor, in the same line (X is any character)
 FX      to previous 'X' before cursor (f and F put the cursor on X)
 tX      til next 'X' (similar to above, but cursor is before X)
@@ -68,6 +70,8 @@ y       # Yanks (copies) text
                 p       #Puts (pastes) the text
                 ESC     #Exits visual mode
 
+yw	# yanks everything from cursor to end of word
+yaw	# yanks entire word regardless of cursor location
 :2,5y       # Yanks everything from lines 2-5
 :m{#,0, $}    # Moves line to a line number or before first or after last line
 ```
