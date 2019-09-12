@@ -13,6 +13,12 @@ CTRL-T CTRL-O   #Return to previous location
 F1              #Opens OS help window
 ```
 
+### `vimrc`
+```
+:so %               # Sources currently-open .vimrc
+:so $MYVIMRC        # Sources .vimrc when from diff file    
+```
+
 ### Navigation 
 ```
  _      # (underscore) Jumps to the first non-whitespace character on the same line the cursor is on
@@ -78,17 +84,18 @@ yaw	# yanks entire word regardless of cursor location
 
 #### Selecting and manipulating
 ```
+/\c                         # case insensitive search (e.g. /\cSearchTerm)
+~                           # Toggles capitalization of selected text (requires Twiddle case)
 V                           # Select entire line
 Vip or Vap                  # Select current paragraph
     o                       # Toggle between beginning and end of selected paragraph
 
 
-%vi{(["'b}                  # Selects everything between `()`s or `[]`s or `""`s or `''`s or `<block>` on current line
-%ci{(["'}                   # Changes everything between ()s or []s or ""s or ''s on current line
-%di{(["' or %di{symbol}     # Deletes everything between {}s ()s or []s or ""s or ''s on current line
-    %di(                    # Deletes everything inbetween ()s
+                           # Note: may have to add `%` before these commands if not using an IDE
+vi{(["'b}                  # Selects everything between `()`s or `[]`s or `""`s or `''`s or `<block>` on current line
+ci{(["'}                   # Changes everything between ()s or []s or ""s or ''s on current line
+di{(["' or %di{symbol}     # Deletes everything between {}s ()s or []s or ""s or ''s on current line
     
-~                           # Toggles capitalization of selected text (requires Twiddle case)
 
 CTRL-v                      # Vertical / column select
 ```
