@@ -41,11 +41,18 @@ G       # Moves cursor to bottom of file
 gg      # Moves cursor to top of file
 {#}G    # Moves cursor to the given line number
 :{#}    # Moves cursor to the given line number
-/{search}          # Searches for results in file
-    n                  # Cycles forward through results
-    N                  # Cycles backwards through results
 %                  # When cursor is over a (, [, or {, this finds the matching closing symbol.
 ```
+
+### Searching
+```
+/{search}          # Searches for results in file
+n                  # Cycles forward through results
+N                  # Cycles backwards through results
+*                  # Search forward for next occurence of word nearest cursor. Case insensitive                  
+#                  # Same as `*` but backward
+```
+
 
 
 ### Text Manipulation
@@ -121,6 +128,7 @@ C			# Deletes to end of line and enters Insert mode. Pair with `_` for quickly r
 v {motion} :w FILENAME      #Saves part of the file that you highlighted to current directory
 :r FILENAME                 #Retrieves the highlighted text that you previously saved and enter it into current VIM session
 :r !COMMAND [e.g. `:r !ls]  #Reads the output of an external command in the VIM session. Useful for log review.
+.                           # Repeats last command
 ```
 
 ### Substitution
@@ -129,6 +137,8 @@ v {motion} :w FILENAME      #Saves part of the file that you highlighted to curr
 :%s/old/new/gc       #Globally substitutes 'old' for 'new', prompting for confirmation for each substitution
 :%s/old/new/g       #Globally substitutes 'old' for 'new' without prompting for confirmation
 :#,#s/old/new/g     #Substitutes 'old' for 'new', where #,# are the line numbers of the range of lines to substitute  
+:6,11s/bad/good/g    # Substitutes in lines 6-11, including 6 and 11.
+
 ```
 ### Ignoring Case
 ```bash
