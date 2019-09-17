@@ -29,11 +29,11 @@ F1              #Opens OS help window
 A       # Appends cursor to end of line and enters insert mode
 b	# jump to beginning of current word
 e	# jump to end of current word
-fX      to next 'X' after cursor, in the same line (X is any character)
-FX      to previous 'X' before cursor (f and F put the cursor on X)
-tX      til next 'X' (similar to above, but cursor is before X)
-TX      til previous 'X'
-;       repeat above, in same direction
+f{}      to next 'X' after cursor, in the same line (X is any character)
+F{}      to previous 'X' before cursor (f and F put the cursor on X)
+t{}     til next 'X' (similar to above, but cursor is before X)
+T{}       til previous 'X'
+;      repeat above, in same direction
 ,       repeat above, in reverse direction
 
 CTL-G   # Shows location in the file and file status
@@ -139,6 +139,13 @@ v {motion} :w FILENAME      #Saves part of the file that you highlighted to curr
 :#,#s/old/new/g     #Substitutes 'old' for 'new', where #,# are the line numbers of the range of lines to substitute  
 :6,11s/bad/good/g    # Substitutes in lines 6-11, including 6 and 11.
 
+
+```
+### Using Marks
+```
+ma                  # Set mark `a` at current cursor location
+'a                  # Jump to line of mark `a` (first character)
+:marks              # List all current marks
 ```
 ### Ignoring Case
 ```bash
