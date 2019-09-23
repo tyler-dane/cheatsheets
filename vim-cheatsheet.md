@@ -1,4 +1,22 @@
 # VIM CHEATSHEET
+
+- [VIM CHEATSHEET](#vim-cheatsheet)
+    + [Getting Help](#getting-help)
+    + [`vimrc`](#-vimrc-)
+    + [Navigation](#navigation)
+    + [Searching](#searching)
+    + [Text Manipulation](#text-manipulation)
+      - [Selecting and manipulating](#selecting-and-manipulating)
+    + [Deleting](#deleting)
+    + [Execute Commands](#execute-commands)
+    + [Substitution](#substitution)
+    + [Using Marks](#using-marks)
+    + [Ignoring Case](#ignoring-case)
+    + [Commenting Out Blocks of Text:](#commenting-out-blocks-of-text-)
+    + [Uncommenting Blocks of Text:](#uncommenting-blocks-of-text-)
+
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+
 - Use these commands from inside a `vim` session.
     - To open a test vim session, run this from the command-line: `vim ~/test-vim.sh`
 - Text inside `{}` is swappable with the adjacent characters
@@ -27,8 +45,8 @@ F1              #Opens OS help window
 3e      # Moves cursor to end of third word forward
 0       # Moves cursor to start of line
 A       # Appends cursor to end of line and enters insert mode
-b	# jump to beginning of current word
-e	# jump to end of current word
+b	    # jump to beginning of current word
+e	    # jump to end of current word
 f{}      to next 'X' after cursor, in the same line (X is any character)
 F{}      to previous 'X' before cursor (f and F put the cursor on X)
 t{}     til next 'X' (similar to above, but cursor is before X)
@@ -41,7 +59,12 @@ G       # Moves cursor to bottom of file
 gg      # Moves cursor to top of file
 {#}G    # Moves cursor to the given line number
 :{#}    # Moves cursor to the given line number
-%                  # When cursor is over a (, [, or {, this finds the matching closing symbol.
+%       # When cursor is over a (, [, or {, this finds the matching closing symbol.
+
+CTRL-b  # Back/up one screen
+CTRL-u  # Back/up 1/2 screen
+CTRL-f  # Forward/down one screen
+CTRL-d  # Forward/down 1/2 screen
 ```
 
 ### Searching
@@ -141,11 +164,16 @@ v {motion} :w FILENAME      #Saves part of the file that you highlighted to curr
 
 
 ```
-### Using Marks
+### Marks
 ```
-ma                  # Set mark `a` at current cursor location
-'a                  # Jump to line of mark `a` (first character)
 :marks              # List all current marks
+ma                  # Set mark `a` at current cursor location
+'a                  # Jump to line of mark 'a' (first character)
+`a                  # Jump to line+position of mark 'a'
+d'a                 # Delete from current line to line of mark a
+d`a                 # Delete from current cursor position to position of mark a
+''                  # Jump back to line (where jumped from)
+``                  # Jump back to position (where jumped from) 
 ```
 ### Ignoring Case
 ```bash
