@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    {% include "page_title.html" %}
+    <link rel="stylesheet" type="text/css" href="../static/c1_styles.css">
+    <script src="/static/jquery-3.3.1.min.js"></script>
+    <script>
+        function set_underline() {
+            set_toolbar();
+            let my_div = document.getElementById("toolbar_vacation_bid_progress_div");
+            let my_input = document.getElementById("toolbar_vacation_bid_progress_div_input");
+
+            my_div.style.borderBottom = "3px #ffffff solid";
+            my_input.style.color = "#ffffff";
+            my_input.style.fontWeight = "bold";
+        }
+        function set_active() {
+            setTimeout(set_underline, 50);
+        }
+    </script>
+
+</head>
+
+<body onload="set_active()" onresize="set_underline()" style="min-width: 1110px; background-color: #C1C6C8">
+
+    {#Add a fixed banner#}
+    <div style="z-index: 99999999; min-width: 1100px; width: calc(100% - 10px); position: sticky; top: 0; left: 5px;
+            white-space: nowrap; margin-right: 5px">
+        {% include "items_11.html" %}
+    </div>
+
+    <div id="status_message_detailed_div" class="statusMessageDetailedHide">
+        {% with %}
+            {% include "status_message.html" %}
+        {% endwith %}
+    </div>
+    <div id="status_message_simple_div" class="statusMessageSimpleHide">
+        <div id="simple_message_title" style="height: 40px; line-height: 40px; font-size: 14px; font-weight: bold"></div>
+        <div id="simple_message_text" style="height: 50px; line-height: 50px; margin-bottom: 10px;
+            width: 598px; overflow-x: auto; white-space: nowrap"></div>
+        <div>
+            <input id="simple_ok_button" type="button" class="saveButton" value="OK" onclick="hide_simple_message()">
+        </div>
+    </div>
+
+    <div id="form_div" style="pointer-events: auto">
+        <div style="border-radius: 5px; background-color: #ffffff;
+            margin: 10px 5px 0 5px; height: calc(100vh - 77px); width: calc(100% - 10px); min-width: 1100px; border: 1px #888888 solid">
+            <div style="height: calc(100vh - 85px); overflow-y: auto">
+                {# Fixed Title Section with bottom border #}
+                <div style="height: 40px; width: calc(100% - 10px); border: 1px black solid; border-radius: 5px; margin: 5px; z-index: 10;
+                    background-color: #ffffff">
+                    <div style="margin-left: 10px">
+                        {# Uncomment out next section if you want an image. Replace <image_name> with your png or jpg name #}
+                        <div style="height: 40px; float: left;">
+                            <div style="padding-top: 7px">
+                                <img class="generalItem" src="/static/actcong.png" style="height: 25px; width: 25px">
+                            </div>
+                        </div>
+                        <div style="height: 40px; float: left">
+                            <p style="font-size: 16px; font-weight: normal; margin-left: 10px; line-height: 40px">
+                                Vacation Bid Progress View
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                {# Start your form here #}
+                <form id="main_form" action="/home" method="post">
+                    {# Add form elements here #}
+
+                </form>
+
+
+            </div>
+        </div>
+
+        {#Keep this at the very bottom after the form#}
+        {% include "footer.html" %}
+    </div>
+</body>
+</html>

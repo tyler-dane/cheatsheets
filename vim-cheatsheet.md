@@ -1,21 +1,26 @@
 # VIM CHEATSHEET
-
 - [VIM CHEATSHEET](#vim-cheatsheet)
     + [Getting Help](#getting-help)
     + [`vimrc`](#-vimrc-)
     + [Navigation](#navigation)
+      - [Jumps](#jumps)
+      - [Other Navigation](#other-navigation)
     + [Searching](#searching)
+    + [Formatting](#formatting)
     + [Text Manipulation](#text-manipulation)
       - [Selecting and manipulating](#selecting-and-manipulating)
     + [Deleting](#deleting)
     + [Execute Commands](#execute-commands)
     + [Substitution](#substitution)
     + [Marks](#marks)
+    + [Macros](#macros)
     + [Ignoring Case](#ignoring-case)
-    + [Commenting Out Blocks of Text:](#commenting-out-blocks-of-text-)
-    + [Uncommenting Blocks of Text:](#uncommenting-blocks-of-text-)
+    + [Comments](#comments)
+      - [Commenting Out Blocks of Text:](#commenting-out-blocks-of-text-)
+      - [Uncommenting Blocks of Text:](#uncommenting-blocks-of-text-)
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+
 
 - Use these commands from inside a `vim` session.
     - To open a test vim session, run this from the command-line: `vim ~/test-vim.sh`
@@ -41,14 +46,14 @@ F1              #Opens OS help window
 #### Jumps
 ```
 CTRL-o  # jump back
-''      # (two single quotes) - jump back
-``      # undo the last jump
+''      # jumpg back
 
+``      # jump forward / undo last jump
 CTRL-i  # jump forward
 TAB     # jump forward
 
-)       # jump forward one sentence
-(       # jump backward one sentence
+)       # jump forward one sentence (uses '.' to identify sentence)
+(       # jump backward one sentence (uses '.' to identify sentence)
 }       # jump forward one paragraph
 {       # jump backward one paragraph
 
@@ -68,7 +73,7 @@ L       # jump to bottom of current screen
 :jumps  # display last 100 jumps
 ```
 
-#### Other
+#### Other Navigation
 ```
  _      # (underscore) move to the first non-whitespace character on the same line the cursor is on
 {+-}    # move to first non-whitespace character on next/revious line
@@ -122,7 +127,7 @@ N                  # Cycles backwards through results
 ### Text Manipulation
 ```
 p           # Puts previously deleted text below the cursor
-]p          # Same as above, but aligns block with surrounding text
+]p          # Same as above, but aligns block with line above
 r{x}        # Replaces text with the letter after r
 R           # Replaces more than one character, entering you into Insert Mode
 ce          # Changes until end of a word and enter Insert Mode. This is a better option than d[motion] when you want to insert text
@@ -136,20 +141,12 @@ CTL-r       # Re-do prevoius command
 
 Y           # Copies entire line (use *P* or *p* to then paste before/after current line)
 y           # Yanks (copies) text
-                EXAMPLE 1:
-                    yw  #Yanks word
-                EXAMPLE 2:
-                    v       #Enters visual mode
-                    ARROWS  #Highlights command
-                    y       #Enters yank mode
-                    $      #Moves cursor to end of line (highlighting)
-                    p       #Puts (pastes) the text
-                    ESC     #Exits visual mode
-
 yw	        # yanks everything from cursor to end of word
 yaw	        # yanks entire word regardless of cursor location
 :2,5y       # Yanks everything from lines 2-5
 :m{#,0, $}  # Moves line to a line number or before first or after last line
+
+i | CTRL-w      # While in insert mode, deletes to the left of cursor until last space
 ```
 
 
@@ -206,10 +203,8 @@ v {motion} :w FILENAME      #Saves part of the file that you highlighted to curr
 
 :#,#s/old/new/g     #Substitutes 'old' for 'new', where #,# are the line numbers of the range of lines to substitute  
 :6,11s/bad/good/g    # Substitutes in lines 6-11, including 6 and 11.
-
-
-
 ```
+
 ### Marks
 ```
 :marks              # List all current marks
@@ -218,9 +213,17 @@ ma                  # Set mark `a` at current cursor location
 `a                  # Jump to line+position of mark 'a'
 d'a                 # Delete from current line to line of mark a
 d`a                 # Delete from current cursor position to position of mark a
-''                  # Jump back to line (where jumped from)
-``                  # Jump back to position (where jumped from) 
+''                  # Jump back to line (where jumped from) [same as CTRL+I]
+``                  # Jump back to position (where jumped from) [same as CTRL+O]
 ```
+
+### Macros
+```
+q<letter><commands>q        # Record Macro
+@<letter>                   # Execute macro
+<number>@<letter>           # Execute macro <number> times
+```
+
 ### Ignoring Case
 ```bash
 EXAMPLE 1:      
@@ -233,7 +236,9 @@ EXAMPLE 2:
     :set noic       #Disables ignoring case again
     :nohls          #Disables highlighting
 ```
-### Commenting Out Blocks of Text:
+### Comments
+#### Commenting Out Blocks of Text:
+* Doesn't work in PyCharm 
 ```bash	
 ESC
 CTRL+v (visual block mode)
@@ -241,7 +246,9 @@ up/down arrow
 SHIFT + I  #Or whatever text you want to include
 ESC
 ```
-### Uncommenting Blocks of Text:
+
+#### Uncommenting Blocks of Text:
+* Doesn't work in PyCharm 
 ```bash
 ESC
 CTRL + v 	#Enters visual block mode
