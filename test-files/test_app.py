@@ -23,7 +23,7 @@ app.config['secret_key'] = os.urandom(32)
 #         "select_form_list": select_form_list,
 #     }
 #
-#     return render_template("index.html", **context)
+#return render_template("index.html", **context)
 
 @app.route("/")
 def index():

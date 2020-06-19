@@ -156,10 +156,10 @@ i | CTRL-w      # While in insert mode, deletes to the left of cursor until last
 
 V                           # Select entire line
 vip                         # Select entire paragraph
-vap
-Vip or Vap                  # Select current paragraph
+vip                     # Select current paragraph 
+vap                     # Select current paragraph + whitespace after it
 
-                           # Note: may have to add `%` before these commands if not using an IDE
+# Note: may have to add `%` before these commands if not using an IDE
 vi{(["'b}                  # Selects everything between `()`s or `[]`s or `""`s or `''`s or `<block>` on current line
 ci{(["'}                   # Changes everything between ()s or []s or ""s or ''s on current line
 di{(["' or %di{symbol}     # Deletes everything between {}s ()s or []s or ""s or ''s on current line
@@ -174,7 +174,8 @@ dw      		# Deletes from cursor to end of word
 da[]            # Delete 'along with' - `da()` deletes everything in parenthesis and the parenthesis themselves
 daw     		# "Delete a word" (deletes entire word under cursor)    
 caw     		# "Change a word" (deletes the word under the cursor and put you in insert mode)
-d$      		# Deletes to end of line
+D           # Deletes to end of line
+d$      		# (same as ^)
 de      		# Deletes to end of current (short) word 
 dE              # Deletes full word (until whitespace)
 dd      		# Deletes entire line
