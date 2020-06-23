@@ -108,13 +108,16 @@ CTRL-d  # Forward/down 1/2 screen
 
 ### Searching
 ```
-/                  # forward search
+/                  # forward search (or use up/down arrow to scroll history)
+/                  # repeat previous search
 ?                  # backward search               
 /\c                # case insensitive search (e.g. /\cSearchTerm)
 n                  # Cycles forward through results
 N                  # Cycles backwards through results
 *                  # Search forward for next occurence of word nearest cursor. Case insensitive                  
 #                  # Same as `*` but backward
+g{*#}              # Same as */#, but works for partial matches
+
 ```
 
 
@@ -197,12 +200,14 @@ v {motion} :w FILENAME      #Saves part of the file that you highlighted to curr
 
 ### Substitution
 ```
-:%s/old/new/g        #Substitutes 'old' for 'new' in current line only
-:%s/old/new/gc       #Globally substitutes 'old' for 'new', prompting for confirmation for each substitution
-:%s/old/new/g       #Globally substitutes 'old' for 'new' without prompting for confirmation
+:s                  # Repeat last substitution
+:%s//new/g          # Substitute last searched pattern with 'new'
+:s/old/new/g        # Substitute 'old' for 'new' in current line only
+:s/old/new/gc       # Globally substitutes 'old' for 'new', prompting for confirmation for each substitution
+:s/old/new/g       # Globally substitutes 'old' for 'new' without prompting for confirmation
 :s/'/"/g            # Substitutes all 's for "s (on current line(?)). Can be combined with visual block mode to only substitute in selected block
 
-:#,#s/old/new/g     #Substitutes 'old' for 'new', where #,# are the line numbers of the range of lines to substitute  
+:#,#s/old/new/g     # Substitutes 'old' for 'new', where #,# are the line numbers of the range of lines to substitute  
 :6,11s/bad/good/g    # Substitutes in lines 6-11, including 6 and 11.
 ```
 
