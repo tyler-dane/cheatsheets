@@ -1,7 +1,5 @@
-# VIM CHEATSHEET
 - [VIM CHEATSHEET](#vim-cheatsheet)
-    + [Getting Help](#getting-help)
-    + [`vimrc`](#-vimrc-)
+    + [Getting Started](#getting-started)
     + [Navigation](#navigation)
       - [Jumps](#jumps)
       - [Other Navigation](#other-navigation)
@@ -15,32 +13,18 @@
     + [Marks](#marks)
     + [Macros](#macros)
     + [Ignoring Case](#ignoring-case)
-    + [Comments](#comments)
+  * [Stuff that might not work in your IDE](#stuff-that-might-not-work-in-your-ide)
       - [Commenting Out Blocks of Text:](#commenting-out-blocks-of-text-)
       - [Uncommenting Blocks of Text:](#uncommenting-blocks-of-text-)
+    + [Getting Help](#getting-help)
+    + [`vimrc`](#-vimrc-)
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
-
+### Getting Started
 - Use these commands from inside a `vim` session.
     - To open a test vim session, run this from the command-line: `vim ~/test-vim.sh`
 - Text inside `{}` is swappable with the adjacent characters
-
-
-### Getting Help
-```bash    
-:help           #Opens VIM help window in terminal
-CTRL-W CTRL-W   #Jump from help window
-CTRL-J          #Jump
-CTRL-T CTRL-O   #Return to previous location
-F1              #Opens OS help window
-```
-
-### `vimrc`
-```
-:so %               # Sources currently-open .vimrc
-:so $MYVIMRC        # Sources .vimrc when from diff file    
-```
 
 ### Navigation 
 #### Jumps
@@ -242,9 +226,10 @@ EXAMPLE 2:
     :set noic       #Disables ignoring case again
     :nohls          #Disables highlighting
 ```
-### Comments
+
+----
+## Stuff that might not work in your IDE
 #### Commenting Out Blocks of Text:
-* Doesn't work in PyCharm 
 ```bash	
 ESC
 CTRL+v (visual block mode)
@@ -254,7 +239,6 @@ ESC
 ```
 
 #### Uncommenting Blocks of Text:
-* Doesn't work in PyCharm 
 ```bash
 ESC
 CTRL + v 	#Enters visual block mode
@@ -263,3 +247,17 @@ x       	#Deletes comments
 ESC         #Exits visual block mode
 ```
 
+### Getting Help
+```bash    
+:help           #Opens VIM help window in terminal
+CTRL-W CTRL-W   #Jump from help window
+CTRL-J          #Jump
+CTRL-T CTRL-O   #Return to previous location
+F1              #Opens OS help window
+```
+
+### `vimrc`
+```
+:so %               # Sources currently-open .vimrc
+:so $MYVIMRC        # Sources .vimrc when from diff file    
+```

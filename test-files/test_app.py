@@ -34,7 +34,7 @@ def hello():
     return render_template("hello.html")
 
 
-@app.route("/jquery_demo")
+@snap.route("/jquery_demo")
 def jquery_demo():
     return render_template("jquery-demo.html")
 
@@ -87,26 +87,26 @@ def test_logger():
 if __name__ == "__main__":
     setup_app()
     test_logger()
-    serve(app, host="demo.calabrio.local", expose_tracebacks=True, port=5004)  # This works for all urls!
+    serve(app, host="demo.company.local", expose_tracebacks=True, port=5004)  # This works for all urls!
     # serve(app, host="localhost") # This works for basic setup!
-    # serve(app, host="demo.calabrio.local") # This works for basic setup, too!
+    # serve(app, host="demo.company.local") # This works for basic setup, too!
 
-    # serve(app, host="demo.calabrio.local", url_scheme="https", expose_tracebacks=True)
-    # serve(app, listen="demo.calabrio.local:443")
+    # serve(app, host="demo.company.local", url_scheme="https", expose_tracebacks=True)
+    # serve(app, listen="demo.company.local:443")
 
     # Steals 443 port from Apache if including port here
-    # serve(app, host="demo.calabrio.local", port=4003, url_scheme="https", expose_tracebacks=True)
-    # serve(app, host="demo.calabrio.local", url_scheme="https", expose_tracebacks=True) #Testing, not working yet
-    # serve(app, host="demo.calabrio.local", port=443, url_scheme="https", expose_tracebacks=True) # Trouble getting to
+    # serve(app, host="demo.company.local", port=4003, url_scheme="https", expose_tracebacks=True)
+    # serve(app, host="demo.company.local", url_scheme="https", expose_tracebacks=True) #Testing, not working yet
+    # serve(app, host="demo.company.local", port=443, url_scheme="https", expose_tracebacks=True) # Trouble getting to
     # work
-    # demo.calabrio.local:8080/hello does NOT work
-    # https://demo.calabrio.local does NOT work
-    # serve(app, host="demo.calabrio.local", url_scheme="https")  # Testing
+    # demo.company.local:8080/hello does NOT work
+    # https://demo.company.local does NOT work
+    # serve(app, host="demo.company.local", url_scheme="https")  # Testing
 
     # app.run(debug=True)
     # app.run(port=80, debug=True)
-    # serve(app, listen="demo.calabrio.local:80")
-    # serve(app, host="demo.calabrio.local", port=5003)  # runs, but no redirect
+    # serve(app, listen="demo.company.local:80")
+    # serve(app, host="demo.company.local", port=5003)  # runs, but no redirect
     # serve(app, host="0.0.0.0", port=5003)  # doesnt run if apache is using same port
     # serve(app, host="localhost", port=80)
     # serve(app, host="localhost") # this was the one that worked originally, the mysteriously stopped
