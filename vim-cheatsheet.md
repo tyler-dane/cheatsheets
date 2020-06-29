@@ -29,12 +29,11 @@
 ### Navigation 
 #### Jumps
 ```
-CTRL-o  # jump back
-''      # jumpg back
+``      # jump forward
+''      # jump back
 
-``      # jump forward / undo last jump
 CTRL-i  # jump forward
-TAB     # jump forward
+CTRL-o  # jump back
 
 )       # jump forward one sentence (uses '.' to identify sentence)
 (       # jump backward one sentence (uses '.' to identify sentence)
@@ -107,8 +106,8 @@ g{*#}              # Same as */#, but works for partial matches
 
 ### Formatting
 ```
->       # Indents highlighted text
-{#}>    # Indents highlighted text for specified times
+>>       # Indents highlighted text
+{#}>>    # Indents highlighted text for specified times
 ```
 
 ### Text Manipulation
@@ -142,7 +141,6 @@ i | CTRL-w      # While in insert mode, deletes to the left of cursor until last
 ~                           # Toggles capitalization of selected text (requires Twiddle case)
 
 V                           # Select entire line
-vip                         # Select entire paragraph
 vip                     # Select current paragraph 
 vap                     # Select current paragraph + whitespace after it
 
@@ -201,16 +199,15 @@ v {motion} :w FILENAME      #Saves part of the file that you highlighted to curr
 ma                  # Set mark `a` at current cursor location
 'a                  # Jump to line of mark 'a' (first character)
 `a                  # Jump to line+position of mark 'a'
-d'a                 # Delete from current line to line of mark a
-d`a                 # Delete from current cursor position to position of mark a
-''                  # Jump back to line (where jumped from) [same as CTRL+I]
-``                  # Jump back to position (where jumped from) [same as CTRL+O]
+{dyc}'a             # {action} from current line to line of mark a
+{dyc}`a             # {action} from current cursor position to position of mark a
 ```
 
 ### Macros
 ```
-q<letter><commands>q        # Record Macro
+q<letter><commands>q        # Record macro
 @<letter>                   # Execute macro
+@@                          # Repeat macro
 <number>@<letter>           # Execute macro <number> times
 ```
 
