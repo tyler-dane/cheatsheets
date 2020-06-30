@@ -1,25 +1,6 @@
-- [VIM CHEATSHEET](#vim-cheatsheet)
-    + [Getting Started](#getting-started)
-    + [Navigation](#navigation)
-      - [Jumps](#jumps)
-      - [Other Navigation](#other-navigation)
-    + [Searching](#searching)
-    + [Formatting](#formatting)
-    + [Text Manipulation](#text-manipulation)
-      - [Selecting and manipulating](#selecting-and-manipulating)
-    + [Deleting](#deleting)
-    + [Execute Commands](#execute-commands)
-    + [Substitution](#substitution)
-    + [Marks](#marks)
-    + [Macros](#macros)
-    + [Ignoring Case](#ignoring-case)
-  * [Stuff that might not work in your IDE](#stuff-that-might-not-work-in-your-ide)
-      - [Commenting Out Blocks of Text:](#commenting-out-blocks-of-text-)
-      - [Uncommenting Blocks of Text:](#uncommenting-blocks-of-text-)
-    + [Getting Help](#getting-help)
-    + [`vimrc`](#-vimrc-)
-
+# VIM CHEATSHEET
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+
 
 ### Getting Started
 - Use these commands from inside a `vim` session.
@@ -113,6 +94,8 @@ g{*#}              # Same as */#, but works for partial matches
 
 ### Text Manipulation
 ```
+x           # Delete character
+xp          # Swap characters (deletes first then puts after second)
 p           # Puts previously deleted text below the cursor
 ]p          # Same as above, but aligns block with line above
 r{x}        # Replaces text with the letter after r
