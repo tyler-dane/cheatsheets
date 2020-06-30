@@ -1,4 +1,24 @@
 # VIM CHEATSHEET
+  * [Getting Started](#getting-started)
+  * [Navigation](#navigation)
+    + [Jumps](#jumps)
+    + [Other Navigation](#other-navigation)
+  * [Searching](#searching)
+  * [Formatting](#formatting)
+  * [Text Manipulation](#text-manipulation)
+    + [Selecting and manipulating](#selecting-and-manipulating)
+  * [Deleting](#deleting)
+  * [Execute Commands](#execute-commands)
+  * [Substitution](#substitution)
+  * [Marks](#marks)
+  * [Macros](#macros)
+  * [Ignoring Case](#ignoring-case)
+- [Stuff that might not work in your IDE](#stuff-that-might-not-work-in-your-ide)
+    + [Commenting Out Blocks of Text:](#commenting-out-blocks-of-text-)
+    + [Uncommenting Blocks of Text:](#uncommenting-blocks-of-text-)
+  * [Getting Help](#getting-help)
+  * [`vimrc`](#-vimrc-)
+
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
 
@@ -124,8 +144,10 @@ i | CTRL-w      # While in insert mode, deletes to the left of cursor until last
 ~                           # Toggles capitalization of selected text (requires Twiddle case)
 
 V                           # Select entire line
-vip                     # Select current paragraph 
-vap                     # Select current paragraph + whitespace after it
+vip                         # Select current paragraph 
+vap                         # Select current paragraph + whitespace after it
+Vu                          # Lowercase line
+VU                          # Uppercase line
 
 # Note: may have to add `%` before these commands if not using an IDE
 vi{(["'b}                  # Selects everything between `()`s or `[]`s or `""`s or `''`s or `<block>` on current line
