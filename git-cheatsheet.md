@@ -1,4 +1,4 @@
-# Git Cheat Sheet
+# Git Cheatsheet
 
 ## Git Log Searching
 
@@ -22,6 +22,8 @@ git rebase --interactive --autosquash OLDCOMMIT^
 ```
 
 ## Rebase into `main` with conflicts
+
+**Reference:** this blog | [(verdantfox.com)](https://verdantfox.com/blog/how-to-git-rebase-mainmaster-onto-your-feature-branch-even-with-merge-conflicts)
 
 ```bash
 git checkout <branch in need of rebasing>
@@ -49,5 +51,3 @@ git diff backup
     # and will claim a merge conflict.
 git push origin HEAD --force
 ```
-
-**Reference:** this blog | [(verdantfox.com)](https://verdantfox.com/blog/how-to-git-rebase-mainmaster-onto-your-feature-branch-even-with-merge-conflicts)
