@@ -59,7 +59,7 @@ def test_mic_link():
     except Exception as e:
         return str(e)
 
-app.route('/ssl_test')
+@app.route('/ssl_test')
 def ssl_test():
 def ssl_test():
     return render_template("ssl_test.html")
@@ -74,6 +74,14 @@ def setup_app():
                 logging.StreamHandler(sys.stdout)
             ]
     )
+    logging.basicConfig(
+                level=logging.INFO,
+                format='%(asctime)s: %(levelname)s: %(name)s: %(message)s',
+                handlers=[
+                    logging.FileHandler("new_app.log"),
+                    logging.StreamHandler(sys.stdout)
+                ]
+        )
 
 
 def test_logger():
