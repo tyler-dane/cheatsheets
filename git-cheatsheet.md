@@ -28,6 +28,7 @@ git rebase --interactive --autosquash OLDCOMMIT^
 ```bash
 git checkout <branch in need of rebasing>
 git fetch origin
+
 git rebase origin/main
 
 # fix merge conflicts
@@ -51,3 +52,32 @@ git diff backup
     # and will claim a merge conflict.
 git push origin HEAD --force
 ```
+
+### Squash non-consecutive commits
+
+TL;DR: change order during rebase
+
+```bash
+git rebase --interactive
+```
+
+Original history:
+
+```git
+pick aaaaaaa Commit A
+pick bbbbbbb Commit B
+pick ccccccc Commit C
+pick ddddddd Commit D
+```
+
+Change order:
+
+```git
+pick aaaaaaa Commit A
+squash ddddddd Commit D
+pick bbbbbbb Commit B
+pick ccccccc Commit C
+```
+
+- git will meld the changes of A and D together into one commit, and put B and C afterwards.
+- When you don't want to keep the commit message of D you would use the `fixup` keyword.

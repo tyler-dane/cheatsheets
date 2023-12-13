@@ -1,35 +1,39 @@
 # VIM CHEATSHEET
-  * [Getting Started](#getting-started)
-  * [Navigation](#navigation)
-    + [Jumps](#jumps)
-    + [Other Navigation](#other-navigation)
-  * [Searching](#searching)
-  * [Formatting](#formatting)
-  * [Text Manipulation](#text-manipulation)
-    + [Selecting and manipulating](#selecting-and-manipulating)
-  * [Deleting](#deleting)
-  * [Execute Commands](#execute-commands)
-  * [Substitution](#substitution)
-  * [Marks](#marks)
-  * [Macros](#macros)
-  * [Ignoring Case](#ignoring-case)
-- [Stuff that might not work in your IDE](#stuff-that-might-not-work-in-your-ide)
-    + [Commenting Out Blocks of Text:](#commenting-out-blocks-of-text-)
-    + [Uncommenting Blocks of Text:](#uncommenting-blocks-of-text-)
-  * [Getting Help](#getting-help)
-  * [`vimrc`](#-vimrc-)
 
-<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+- [VIM CHEATSHEET](#vim-cheatsheet)
+  - [Getting Started](#getting-started)
+  - [Navigation](#navigation)
+    - [Jumps](#jumps)
+      - [Moving](#moving)
+    - [Other Navigation](#other-navigation)
+    - [Searching](#searching)
+    - [Formatting](#formatting)
+    - [Replace Under cursor](#replace-under-cursor)
+    - [Text Manipulation](#text-manipulation)
+      - [Selecting and manipulating](#selecting-and-manipulating)
+    - [Deleting](#deleting)
+    - [Execute Commands](#execute-commands)
+    - [Substitution](#substitution)
+    - [Marks](#marks)
+    - [Macros](#macros)
+    - [Ignoring Case](#ignoring-case)
+  - [Stuff that might not work in your IDE](#stuff-that-might-not-work-in-your-ide)
+    - [Commenting Out Blocks of Text](#commenting-out-blocks-of-text)
+      - [Uncommenting Blocks of Text:](#uncommenting-blocks-of-text)
+    - [Getting Help](#getting-help)
+    - [`vimrc`](#vimrc)
 
+## Getting Started
 
-### Getting Started
 - Use these commands from inside a `vim` session.
-    - To open a test vim session, run this from the command-line: `vim ~/test-vim.sh`
+  - To open a test vim session, run this from the command-line: `vim ~/test-vim.sh`
 - Text inside `{}` is swappable with the adjacent characters
 
-### Navigation 
-#### Jumps
-```
+## Navigation
+
+### Jumps
+
+```text
 ``      # jump forward
 ''      # jump back
 
@@ -57,31 +61,43 @@ L       # jump to bottom of current screen
 :jumps  # display last 100 jumps
 ```
 
-#### Other Navigation
-```
- _      # (underscore) move to the first non-whitespace character on the same line the cursor is on
-{+-}    # move to first non-whitespace character on next/revious line
-0       # move cursor to start of line
-a       # append cursor to end of line and enters insert mode
-b	    # move to beginning of previous word
-B       # move to beginning of previous word before a whitespace
-e	    # move to end of word
-E       # move to end of word before whitespace
-w       # move forward to beginning of next word
-W       # move to beginning of next word after a whitespace
-2{we}   # move cursor 2 words forward/back
-f{}     # to next 'X' after cursor, in the same line (X is any character)
-F{}     # to previous 'X' before cursor (f and F put the cursor on X)
-t{}     # move 'til' next 'X' (similar to above, but cursor is before X)
-T{}     # move 'til' previous 'X'
+#### Moving
 
-;       # repeat above, in same direction
-,       # repeat above, in reverse direction
+```text
+:m 12           move current line to after line 12
+:m 0            move current line to before first line
+:m $            move current line to after last line
+:m 'a           move current line to after line with mark a
+:m 'a-1         move current line to before line with mark a
+:m '}-1         move current line to the end of the current paragraph
 ```
 
+### Other Navigation
 
+```text
+ _       to first character on the same line as cursor
+{+-}     to first character on next/previous line
+0        cursor to start of line
+a        append cursor to end of line and enters insert mode
+b	       to beginning of previous word
+B        to beginning of previous word before a whitespace
+e	       move to end of word
+E        to end of word before whitespace
+w        forward to beginning of next word
+W        to beginning of next word after a whitespace
+2{we}    to cursor 2 words forward/back
 
+f{}      to next 'X' after cursor, in the same line (X is any character)
+F{}      to previous 'X' before cursor (f and F put the cursor on X)
+
+t{}      'til' next 'X' (similar to above, but cursor is before X)
+T{}      'til' previous 'X'
+
+;        repeat above, in same direction
+,        repeat above, in reverse direction
 ```
+
+```text
 CTL-G   # Shows location in the file and file status
 
 CTRL-b  # Back/up one screen
@@ -91,28 +107,36 @@ CTRL-d  # Forward/down 1/2 screen
 ```
 
 ### Searching
-```
+
+```text
 /                  # forward search (or use up/down arrow to scroll history)
 /                  # repeat previous search
-?                  # backward search               
+?                  # backward search
 /\c                # case insensitive search (e.g. /\cSearchTerm)
 n                  # Cycles forward through results
 N                  # Cycles backwards through results
-*                  # Search forward for next occurence of word nearest cursor. Case insensitive                  
+*                  # Search forward for next occurence of word nearest cursor. Case insensitive
 #                  # Same as `*` but backward
 g{*#}              # Same as */#, but works for partial matches
 
 ```
 
-
 ### Formatting
-```
+
+```text
 >>       # Indents highlighted text
 {#}>>    # Indents highlighted text for specified times
 ```
 
-### Text Manipulation
+### Replace Under cursor
+
+```text
+* then :%s//new value/     * uses last searched patter, so don't have to re-type
 ```
+
+### Text Manipulation
+
+```text
 x           # Delete character
 xp          # Swap characters (deletes first then puts after second)
 p           # Puts previously deleted text below the cursor
@@ -138,13 +162,13 @@ yaw	        # yanks entire word regardless of cursor location
 i | CTRL-w      # While in insert mode, deletes to the left of cursor until last space
 ```
 
-
 #### Selecting and manipulating
-```
+
+```text
 ~                           # Toggles capitalization of selected text (requires Twiddle case)
 
 V                           # Select entire line
-vip                         # Select current paragraph 
+vip                         # Select current paragraph
 vap                         # Select current paragraph + whitespace after it
 Vu                          # Lowercase line
 VU                          # Uppercase line
@@ -153,30 +177,33 @@ VU                          # Uppercase line
 vi{(["'b}                  # Selects everything between `()`s or `[]`s or `""`s or `''`s or `<block>` on current line
 ci{(["'}                   # Changes everything between ()s or []s or ""s or ''s on current line
 di{(["' or %di{symbol}     # Deletes everything between {}s ()s or []s or ""s or ''s on current line
-    
+
 
 CTRL-v                      # Vertical / column select
 ```
 
 ### Deleting
-```
-dw      		# Deletes from cursor to end of word
-da[]            # Delete 'along with' - `da()` deletes everything in parenthesis and the parenthesis themselves
-daw     		# "Delete a word" (deletes entire word under cursor)    
-caw     		# "Change a word" (deletes the word under the cursor and put you in insert mode)
-D           # Deletes to end of line
-d$      		# (same as ^)
-de      		# Deletes to end of current (short) word 
-dE              # Deletes full word (until whitespace)
-dd      		# Deletes entire line
-C			# Deletes to end of line and enters Insert mode. Pair with `_` for quickly replace lines
-:a,bd   		# Deletes from a to b
-:,bd    		# Deletes from current location to b
-:%s/phrase//gc		# Delete each 'phrase' in document, prompting for comfirmation
+
+```text
+dw              Deletes from cursor to end of word
+da[]            Delete 'along with' - `da()` deletes paren and contents inside
+daw             "Delete a word" (deletes entire word under cursor)
+caw             "Change a word" (deletes the word under the cursor and put you in insert mode)
+D               Deletes to end of line
+d$              same as ^
+de              Deletes to end of current (short) word
+dE              Deletes full word (until whitespace)
+dd              Deletes entire line
+:{b},{e}d       Deletes from line {begin} to line {end}
+C               Deletes to end of line and enters Insert mode. Pair with `_` for quickly replace lines
+:a,bd           Deletes from a to b
+:,bd            Deletes from current location to b
+:%s/phrase//gc  Delete each 'phrase' in document, prompting for comfirmation
 
 ```
 
 ### Execute Commands
+
 ```bash
 :!                          #Executes external shell command
 v {motion} :w FILENAME      #Saves part of the file that you highlighted to current directory
@@ -186,19 +213,22 @@ v {motion} :w FILENAME      #Saves part of the file that you highlighted to curr
 ```
 
 ### Substitution
-```
+
+```text
 :s                  # Repeat last substitution
 :%s//new/g          # Substitute last searched pattern with 'new'
+:%s//new value/     # Same
 :s/old/new/g        # Substitute 'old' for 'new' in current line only
 :s/old/new/gc       # Globally substitutes 'old' for 'new', prompting for confirmation for each substitution
 :s/old/new/g       # Globally substitutes 'old' for 'new' without prompting for confirmation
 :s/'/"/g            # Substitutes all 's for "s (on current line(?)). Can be combined with visual block mode to only substitute in selected block
 
-:#,#s/old/new/g     # Substitutes 'old' for 'new', where #,# are the line numbers of the range of lines to substitute  
+:#,#s/old/new/g     # Substitutes 'old' for 'new', where #,# are the line numbers of the range of lines to substitute
 :6,11s/bad/good/g    # Substitutes in lines 6-11, including 6 and 11.
 ```
 
 ### Marks
+
 ```
 :marks              # List all current marks
 ma                  # Set mark `a` at current cursor location
@@ -209,6 +239,7 @@ ma                  # Set mark `a` at current cursor location
 ```
 
 ### Macros
+
 ```
 q<letter><commands>q        # Record macro
 @<letter>                   # Execute macro
@@ -217,8 +248,9 @@ q<letter><commands>q        # Record macro
 ```
 
 ### Ignoring Case
+
 ```bash
-EXAMPLE 1:      
+EXAMPLE 1:
     /ignore\c       #Searches for 'ignore' and ignores case
 EXAMPLE 2:
     /ignore         #Searches for 'ignore'
@@ -229,10 +261,13 @@ EXAMPLE 2:
     :nohls          #Disables highlighting
 ```
 
-----
+---
+
 ## Stuff that might not work in your IDE
-#### Commenting Out Blocks of Text:
-```bash	
+
+### Commenting Out Blocks of Text
+
+```bash
 ESC
 CTRL+v (visual block mode)
 up/down arrow
@@ -241,6 +276,7 @@ ESC
 ```
 
 #### Uncommenting Blocks of Text:
+
 ```bash
 ESC
 CTRL + v 	#Enters visual block mode
@@ -250,7 +286,8 @@ ESC         #Exits visual block mode
 ```
 
 ### Getting Help
-```bash    
+
+```bash
 :help           #Opens VIM help window in terminal
 CTRL-W CTRL-W   #Jump from help window
 CTRL-J          #Jump
@@ -259,7 +296,8 @@ F1              #Opens OS help window
 ```
 
 ### `vimrc`
-```
+
+```text
 :so %               # Sources currently-open .vimrc
-:so $MYVIMRC        # Sources .vimrc when from diff file    
+:so $MYVIMRC        # Sources .vimrc when from diff file
 ```
