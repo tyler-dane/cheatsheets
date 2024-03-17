@@ -118,7 +118,18 @@ N                  # Cycles backwards through results
 *                  # Search forward for next occurence of word nearest cursor. Case insensitive
 #                  # Same as `*` but backward
 g{*#}              # Same as */#, but works for partial matches
+j
+```
 
+Smart-case searching:
+
+```text
+:set ignorecase
+:set smartcase
+/copyright      " Case insensitive
+/Copyright      " Case sensitive
+/copyright\C    " Case sensitive
+/Copyright\c    " Case insensitive
 ```
 
 ### Formatting
@@ -194,8 +205,7 @@ d$              same as ^
 de              Deletes to end of current (short) word
 dE              Deletes full word (until whitespace)
 dd              Deletes entire line
-:{b},{e}d       Deletes from line {begin} to line {end}
-C               Deletes to end of line and enters Insert mode. Pair with `_` for quickly replace lines
+C               Deletes to end of line and enters Insert mode. Pair with `_`
 :a,bd           Deletes from a to b
 :,bd            Deletes from current location to b
 :%s/phrase//gc  Delete each 'phrase' in document, prompting for comfirmation
@@ -229,7 +239,7 @@ v {motion} :w FILENAME      #Saves part of the file that you highlighted to curr
 
 ### Marks
 
-```
+```text
 :marks              # List all current marks
 ma                  # Set mark `a` at current cursor location
 'a                  # Jump to line of mark 'a' (first character)
@@ -240,7 +250,7 @@ ma                  # Set mark `a` at current cursor location
 
 ### Macros
 
-```
+```text
 q<letter><commands>q        # Record macro
 @<letter>                   # Execute macro
 @@                          # Repeat macro
