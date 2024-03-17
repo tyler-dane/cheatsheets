@@ -21,7 +21,30 @@ git commit --fixup=OLDCOMMIT
 git rebase --interactive --autosquash OLDCOMMIT^
 ```
 
-## Rebase into `main` with conflicts
+### PRs
+
+Get forked PR locally
+
+**Option 1: GH CLI**:
+
+- Go to PR on GitHub
+- Select Code dropdown
+- Run `gh` command
+
+(full docs: [here](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/checking-out-pull-requests-locally))
+
+**Option 2: The hard way**
+`git fetch origin pull/<#>/head:<branchName></branchName>`
+
+example: `git fetch origin pull/3/head:Installation-doc-Update`
+
+- get pull# and branch name from GitHub PR section
+
+## Rebase & Squash
+
+`git rebase -i <hash>` - rebase up until hash
+
+### Rebase into `main` with conflicts
 
 **Reference:** this blog | [(verdantfox.com)](https://verdantfox.com/blog/how-to-git-rebase-mainmaster-onto-your-feature-branch-even-with-merge-conflicts)
 
