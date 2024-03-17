@@ -11,6 +11,7 @@
 | `CMD SHIFT \` | Focus on sidebar terminals |
 | `CTRL w w`    | Toggle split focus         |
 | `CMD SHIFT [` | Toggle terminals focus     |
+| `CTRL [o,i]`  | Toggle files in            |
 
 ---
 
