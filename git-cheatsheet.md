@@ -1,4 +1,5 @@
 # Git Cheatsheet
+change prev commit (not most recent): https://stackoverflow.com/questions/2719579/how-to-add-a-changed-file-to-an-older-not-last-commit-in-git
 
 ## Git Log Searching
 
@@ -43,6 +44,9 @@ example: `git fetch origin pull/3/head:Installation-doc-Update`
 ## Rebase & Squash
 
 `git rebase -i <hash>` - rebase up until hash
+
+## Rebase: the sneaky way
+https://stackoverflow.com/a/54824509
 
 ### Rebase into `main` with conflicts
 
