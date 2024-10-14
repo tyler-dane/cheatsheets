@@ -10,8 +10,10 @@
 | `CMD k   e`   | Focus on file explorer     |
 | `CMD SHIFT \` | Focus on sidebar terminals |
 | `CTRL w w`    | Toggle split focus         |
-| `CMD SHIFT [` | Toggle terminals focus     |
-| `CTRL [o,i]`  | Toggle files in            |
+| `CMD SHIFT [` | Cycle open files           |
+| `CMD OPT ->`  | Cycle open files           |
+
+| `CTRL [o,i]` | Toggle files in |
 
 ---
 

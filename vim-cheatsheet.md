@@ -142,15 +142,15 @@ Smart-case searching:
 ### Replace Under cursor
 
 ```text
-* then :%s//new value/     * uses last searched patter, so don't have to re-type
+* then :%s//new value/     * uses last searched pattern, so don't have to re-type
 ```
 
 ### Text Manipulation
 
 ```text
 x           # Delete character
-xp          # Swap characters (deletes first then puts after second)
 p           # Puts previously deleted text below the cursor
+xp          # Swap characters (deletes first then puts after second)
 ]p          # Same as above, but aligns block with line above
 r{x}        # Replaces text with the letter after r
 R           # Replaces more than one character, entering you into Insert Mode
@@ -311,3 +311,5 @@ F1              #Opens OS help window
 :so %               # Sources currently-open .vimrc
 :so $MYVIMRC        # Sources .vimrc when from diff file
 ```
+### Add-Ons
+Package manager: Vundle: https://github.com/VundleVim/Vundle.vim/blob/master/doc/vundle.txt

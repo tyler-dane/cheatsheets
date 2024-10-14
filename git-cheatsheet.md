@@ -1,4 +1,5 @@
 # Git Cheatsheet
+
 change prev commit (not most recent): https://stackoverflow.com/questions/2719579/how-to-add-a-changed-file-to-an-older-not-last-commit-in-git
 
 ## Git Log Searching
@@ -30,7 +31,7 @@ Get forked PR locally
 
 - Go to PR on GitHub
 - Select Code dropdown
-- Run `gh` command
+- Run `gh` command: ``gh pr checkout {#}`
 
 (full docs: [here](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/checking-out-pull-requests-locally))
 
@@ -41,11 +42,18 @@ example: `git fetch origin pull/3/head:Installation-doc-Update`
 
 - get pull# and branch name from GitHub PR section
 
+## Merge, preferring all the incoming changes when conflicts
+
+```bash
+ git merge feat/foo --strategy-option theirs
+```
+
 ## Rebase & Squash
 
 `git rebase -i <hash>` - rebase up until hash
 
 ## Rebase: the sneaky way
+
 https://stackoverflow.com/a/54824509
 
 ### Rebase into `main` with conflicts
