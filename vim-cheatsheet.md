@@ -22,6 +22,7 @@
       - [Uncommenting Blocks of Text:](#uncommenting-blocks-of-text)
     - [Getting Help](#getting-help)
     - [`vimrc`](#vimrc)
+  - [NVim](#nvim)
 
 ## Getting Started
 
@@ -165,6 +166,7 @@ CTL-r       # Re-do prevoius command
 
 Y           # Copies entire line (use *P* or *p* to then paste before/after current line)
 y           # Yanks (copies) text
++y          # Yanks to clipboard
 yw	        # yanks everything from cursor to end of word
 yaw	        # yanks entire word regardless of cursor location
 :2,5y       # Yanks everything from lines 2-5
@@ -313,3 +315,10 @@ F1              #Opens OS help window
 ```
 ### Add-Ons
 Package manager: Vundle: https://github.com/VundleVim/Vundle.vim/blob/master/doc/vundle.txt
+
+## NVim
+
+How to configure and use Neovim
+
+`SPACE + s + f` | find files
+

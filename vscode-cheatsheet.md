@@ -12,12 +12,7 @@
 | `CTRL w w`    | Toggle split focus         |
 | `CMD SHIFT [` | Cycle open files           |
 | `CMD OPT ->`  | Cycle open files           |
-
+| `CTRL SHIFT g` | Open Git tab |
 | `CTRL [o,i]` | Toggle files in |
+| "Open Changes" | Opens all changed files |
 
----
-
-[React Snippets](https://github.com/ults-io/vscode-react-javascript-snippets/blob/master/docs/Snippets.md) (github)
-
-- `CMD SHIFT P > snippets` | search for snippet
-- `tsrfce` | create functional component default export
