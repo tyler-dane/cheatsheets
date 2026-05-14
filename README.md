@@ -1,6 +1,6 @@
 # Cheatsheets
 
-Handy cheatsheets for unix/linux developers and system administrators
+Handy cheatsheets for typing quickly
 
 | Cheatsheet | Cheatsheet |
 | --- | --- |

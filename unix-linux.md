@@ -1,5 +1,12 @@
 # Unix/Linux Cheatsheet
 
+TO ORGANIZE:
+
+bat - cat alternative
+fzf - fuzzy finder
+
+----
+
 A list of Unix/Linux commands that I find useful
 
 - I develop primarily on OSX and RedHat 7 systems, so a number of these commands will be specific to those environments

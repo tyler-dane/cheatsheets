@@ -99,7 +99,7 @@ T{}      'til' previous 'X'
 ```
 
 ```text
-CTL-G   # Shows location in the file and file status
+CTRL-G   # Shows location in the file and file status
 
 CTRL-b  # Back/up one screen
 CTRL-u  # Back/up 1/2 screen
@@ -315,10 +315,4 @@ F1              #Opens OS help window
 ```
 ### Add-Ons
 Package manager: Vundle: https://github.com/VundleVim/Vundle.vim/blob/master/doc/vundle.txt
-
-## NVim
-
-How to configure and use Neovim
-
-`SPACE + s + f` | find files
 
