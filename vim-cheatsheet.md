@@ -22,6 +22,7 @@
       - [Uncommenting Blocks of Text:](#uncommenting-blocks-of-text)
     - [Getting Help](#getting-help)
     - [`vimrc`](#vimrc)
+  - [Custom Key Mappings](#custom-key-mappings)
   - [NVim](#nvim)
 
 ## Getting Started
@@ -99,8 +100,6 @@ T{}      'til' previous 'X'
 ```
 
 ```text
-CTRL-G   # Shows location in the file and file status
-
 CTRL-b  # Back/up one screen
 CTRL-u  # Back/up 1/2 screen
 CTRL-f  # Forward/down one screen
@@ -113,10 +112,6 @@ CTRL-d  # Forward/down 1/2 screen
 /                  # forward search (or use up/down arrow to scroll history)
 /                  # repeat previous search
 ?                  # backward search
-/\c                # case insensitive search (e.g. /\cSearchTerm)
-n                  # Cycles forward through results
-N                  # Cycles backwards through results
-*                  # Search forward for next occurence of word nearest cursor. Case insensitive
 #                  # Same as `*` but backward
 g{*#}              # Same as */#, but works for partial matches
 j
@@ -210,6 +205,10 @@ dd              Deletes entire line
 C               Deletes to end of line and enters Insert mode. Pair with `_`
 :a,bd           Deletes from a to b
 :,bd            Deletes from current location to b
+:%s/phrase//gc  Delete each 'phrase' in document, prompting for comfirmation
+
+:%s/phrase//gc  Delete each 'phrase' in document, prompting for comfirmation
+
 :%s/phrase//gc  Delete each 'phrase' in document, prompting for comfirmation
 
 ```
@@ -315,4 +314,42 @@ F1              #Opens OS help window
 ```
 ### Add-Ons
 Package manager: Vundle: https://github.com/VundleVim/Vundle.vim/blob/master/doc/vundle.txt
+
+---
+
+## Custom Key Mappings
+
+### Move Lines Up/Down with Option+Arrow (like VSCode)
+
+Add to `~/.vimrc` (Vim) or `~/.config/nvim/init.vim` (Neovim):
+
+```vim
+" Normal mode
+nnoremap <A-Down> :m .+1<CR>==
+nnoremap <A-Up> :m .-2<CR>==
+
+" Visual mode (move selected block)
+vnoremap <A-Down> :m '>+1<CR>gv=gv
+vnoremap <A-Up> :m '<-2<CR>gv=gv
+
+" Insert mode
+inoremap <A-Down> <Esc>:m .+1<CR>==gi
+inoremap <A-Up> <Esc>:m .-2<CR>==gi
+```
+
+#### Terminal Setup (macOS)
+
+These mappings require your terminal to send Option as a modifier key:
+
+- **iTerm2**: Preferences → Profiles → Keys → General → Set "Left Option key" to "Esc+"
+- **Terminal.app**: Preferences → Profiles → Keyboard → Check "Use Option as Meta key"
+
+#### How It Works
+
+| Command | Description |
+|---------|-------------|
+| `:m .+1` | Move current line down one (`.` = current line, `+1` = one line below) |
+| `:m .-2` | Move current line up one (`-2` because the line moves *after* the target) |
+| `==` | Re-indent the line after moving |
+| `gv=gv` | Visual mode: reselect the moved block (`gv`) and re-indent (`=`), then reselect (`gv`) |
 
