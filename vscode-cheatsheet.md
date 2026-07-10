@@ -16,3 +16,5 @@
 | `CTRL [o,i]` | Toggle files in |
 | "Open Changes" | Opens all changed files |
 
+GitLens: Compare HEAD with ...
+- select `main` to see all changes on current branch

@@ -221,6 +221,8 @@ v {motion} :w FILENAME      #Saves part of the file that you highlighted to curr
 :r FILENAME                 #Retrieves the highlighted text that you previously saved and enter it into current VIM session
 :r !COMMAND [e.g. `:r !ls]  #Reads the output of an external command in the VIM session. Useful for log review.
 .                           # Repeats last command
+echo expand('%:p')          # Print full file path
+:f                          # Print relative path
 ```
 
 ### Substitution
